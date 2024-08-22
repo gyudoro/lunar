@@ -1,0 +1,19 @@
+#ifndef COMMON_CONFIG_H
+#define COMMON_CONFIG_H
+
+#cmakedefine ARCH_X86_64 @ARCH_X86_64@
+#cmakedefine ARCH_X86 @ARCH_X86@
+#cmakedefine ARCH_GENERIC @ARCH_GENERIC@
+
+#cmakedefine COMPILER_GCC @COMPILER_GCC@
+#cmakedefine COMPILER_CLANG @COMPILER_CLANG@
+#cmakedefine COMPILER_MSVC @COMPILER_MSVC@
+
+#cmakedefine HAVE_STDINT_H @HAVE_STDINT_H@
+
+#cmakedefine INT8_TYPE @INT8_TYPE@
+#cmakedefine INT16_TYPE @INT16_TYPE@
+#cmakedefine INT32_TYPE @INT32_TYPE@
+#cmakedefine INT64_TYPE @INT64_TYPE@
+
+#endif /* COMMON_CONFIG_H */

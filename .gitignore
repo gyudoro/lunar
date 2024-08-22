@@ -1,0 +1,14 @@
+# builds
+
+build/
+include/common/config.h
+
+# cmake
+
+CMakeCache.txt
+cmake_install.cmake
+
+CMakeFiles/
+CMakeScripts/
+
+Makefile
