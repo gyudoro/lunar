@@ -12,3 +12,8 @@ CMakeFiles/
 CMakeScripts/
 
 Makefile
+
+# OS
+
+desktop.ini
+.DS_Store
