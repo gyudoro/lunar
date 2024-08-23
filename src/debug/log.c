@@ -38,7 +38,8 @@ static void signalHandle(int type)
 			break;
 
 		default:
-			logMessage(LOG_FATAL, "Encountered signal %d", type);
+			logMessage(LOG_FATAL, "Encountered signal %d",
+			           type);
 	}
 }
 
@@ -55,8 +56,9 @@ void logMessage(LogLevel level, const char *fmt, ...)
 	
 	va_start(va, fmt);
 
-	/* we save this in case any library function we call in this routine
-	   fails, even if there is no actual OS error to begin with */
+	/* we save this in case any library function we call in this
+	   routine fails, even if there is no actual OS error to begin
+	   with */
 	code = errno;
 
 	timer = time(NULL);
@@ -91,11 +93,14 @@ void logMessage(LogLevel level, const char *fmt, ...)
 	va_end(va);
 
 	if (level == LOG_OS) {
-		/* because we already printed the message, we can reuse fmt! */
+		/* because we already printed the message, we can reuse
+		   fmt! */
+
 		fmt = strerror(code);
 
 		if (fmt != NULL)
-			fprintf(stderr, ": %s (code %d)", strerror(code), code);
+			fprintf(stderr, ": %s (code %d)",
+			        strerror(code), code);
 	}
 
 	fputc('\n', stderr);
