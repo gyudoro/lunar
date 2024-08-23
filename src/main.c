@@ -9,6 +9,9 @@ int main(int argc, char *argv[])
 	DataHeader header;
 	File file;
 
+	(void)argc;
+	(void)argv;
+
 	logMessage(LOG_TRACE, "main()");
 	logSignals();
 

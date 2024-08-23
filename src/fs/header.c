@@ -35,14 +35,14 @@ void dataHeaderDebug(DataHeader *header)
 	logMessage(LOG_DEBUG, "Disk ID: %x", (int)header->id);
 	logMessage(LOG_DEBUG, "Version: %x", (int)header->version);
 
-	logMessage(LOG_DEBUG, "Main Location: %l",
+	logMessage(LOG_DEBUG, "Main Location: %ld",
 	           (long)header->mainLocation); 
 
-	logMessage(LOG_DEBUG, "FST Location: %l",
+	logMessage(LOG_DEBUG, "FST Location: %ld",
 	           (long)header->fstLocation); 
 
-	logMessage(LOG_DEBUG, "FST Size: %l", (long)header->fstSize); 
+	logMessage(LOG_DEBUG, "FST Size: %ld", (long)header->fstSize); 
 
-	logMessage(LOG_DEBUG, "FST Max Size: %l",
+	logMessage(LOG_DEBUG, "FST Max Size: %ld",
 	           (long)header->fstSizeMax); 
 }
