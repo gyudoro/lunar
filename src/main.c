@@ -1,10 +1,24 @@
 #include <stdio.h>
 
 #include "debug/log.h"
+#include "fs/file.h"
+#include "fs/header.h"
 
 int main(int argc, char *argv[])
 {
+	DataHeader header;
+	File file;
+
+	logMessage(LOG_TRACE, "main()");
 	logSignals();
-	printf("Hello, world!\n");
+
+	fileOpen(&file, "disk.iso");
+	fileDebug(&file);
+
+	dataHeaderRead(&header, &file);
+	dataHeaderDebug(&header);
+
+	fileClose(&file);
+
 	return 0;
 }

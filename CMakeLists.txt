@@ -22,7 +22,9 @@ add_executable(lunar ${sources})
 
 target_sources(lunar PRIVATE
   src/main.c
-  src/debug/log.c)
+  src/debug/log.c
+  src/fs/file.c
+  src/fs/header.c)
 
 target_include_directories(lunar PRIVATE include)
 
