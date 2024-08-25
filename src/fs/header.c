@@ -3,9 +3,9 @@
 #include "debug/log.h"
 #include "fs/file.h"
 
-void dataHeaderRead(DataHeader *header, File *file)
+void headerRead(Header *header, File *file)
 {
-	logMessage(LOG_TRACE, "dataHeaderRead()");
+	logMessage(LOG_TRACE, "headerRead()");
 
 	header->console = fileGetChar(file);
 	header->game = fileGetShort(file);
@@ -23,9 +23,9 @@ void dataHeaderRead(DataHeader *header, File *file)
 	header->fstSizeMax = fileGetLong(file);
 }
 
-void dataHeaderDebug(DataHeader *header)
+void headerDebug(Header *header)
 {
-	logMessage(LOG_TRACE, "dataHeaderDebug()");
+	logMessage(LOG_TRACE, "headerDebug()");
 
 	logMessage(LOG_DEBUG, "Console ID: %c", header->console);
 	logMessage(LOG_DEBUG, "Gamecode: %x", (int)header->game);

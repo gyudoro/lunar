@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[])
 {
-	DataHeader header;
+	Header header;
 	File file;
 
 	(void)argc;
@@ -18,8 +18,8 @@ int main(int argc, char *argv[])
 	fileOpen(&file, "disk.iso");
 	fileDebug(&file);
 
-	dataHeaderRead(&header, &file);
-	dataHeaderDebug(&header);
+	headerRead(&header, &file);
+	headerDebug(&header);
 
 	fileClose(&file);
 

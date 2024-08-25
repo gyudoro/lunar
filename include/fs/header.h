@@ -18,9 +18,17 @@ typedef struct {
 	u32 fstLocation;
 	u32 fstSize;
 	u32 fstSizeMax;
-} DataHeader;
+} Header;
 
-void dataHeaderRead(DataHeader *header, File *file);
-void dataHeaderDebug(DataHeader *header);
+typedef struct {
+	u8 date[9];
+
+	u32 entrypoint;
+	u32 size;
+	u32 trailerSize;
+} Apploader;
+
+void headerRead(Header *header, File *file);
+void headerDebug(Header *header);
 
 #endif /* FS_HEADER_H */
